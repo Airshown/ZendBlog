@@ -142,5 +142,56 @@ return array(
                 ),
             ),
         ),
+        'comments' => array(
+            'type'    => 'Zend\Mvc\Router\Http\Literal',
+            'options' => array(
+                'route'    => '/comments',
+                'defaults' => array(
+                    'controller'    => 'Blog\Controller\Comment',
+                    'action'        => 'index',
+                ),
+            ),
+            'may_terminate' => true,
+            'child_routes' => array(
+                'list' => array(
+                    'type'    => 'Zend\Mvc\Router\Http\Segment',
+                    'options' => array(
+                        'route'    => '[/page/:page][/category/:category][/author/:author]',
+                        'defaults' => array(
+                            'page' => 1,
+                        ),
+                        'constraints' => array(
+                            'page'     => '[0-9]+',
+                            'category' => '[a-zA-Z\-0-9]+',
+                            'author'   => '[0-9]+',
+                        ),
+                    ),
+                ),
+                'show' => array(
+                    'type'    => 'Zend\Mvc\Router\Http\Segment',
+                    'options' => array(
+                        'route'    => '/:slug',
+                        'defaults' => array(
+                            'action' => 'show',
+                        ),
+                        'constraints' => array(
+                            'slug' => '[a-zA-Z\-0-9]+',
+                        ),
+                    ),
+                ),
+                'category' => array(
+                    'type'    => 'segment',
+                    'options' => array(
+                        'route'    => 'category/:slug',
+                        'defaults' => array(
+                            'action' => 'category',
+                        ),
+                        'constraints' => array(
+                            'slug' => '[a-zA-Z\-0-9]+',
+                        ),
+                    ),
+                ),
+            ),
+        ),
     ),
 );

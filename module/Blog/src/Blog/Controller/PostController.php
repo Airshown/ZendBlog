@@ -63,8 +63,7 @@ class PostController extends CoreController
         }
 
         $posts = $this->postService->getActivePost($criteria);
-        $posts->setItemCountPerPage(5)
-            ->setCurrentPageNumber($page);
+        $posts->setItemCountPerPage(5)->setCurrentPageNumber($page);
 
         return new ViewModel(array(
             'posts'    => $posts,
@@ -127,8 +126,7 @@ class PostController extends CoreController
         $page = $this->params('page', 1);
 
         $posts = $this->postService->getActivePost();
-        $posts->setItemCountPerPage(5)
-            ->setCurrentPageNumber($page);
+        $posts->setItemCountPerPage(5)->setCurrentPageNumber($page);
 
         return new ViewModel(array(
             'posts' => $posts,
