@@ -40,13 +40,13 @@ class EditPostForm extends Form
                 'csrf_post',
             )
         );
-
+        
         $this->add(
             array(
                 'name' => 'submit',
                 'attributes' => array(
                     'type' => 'submit',
-                    'value' => 'Edit',
+                    'value' => 'Modifier',
                     'class' => 'btn btn-primary'
                 )
             )

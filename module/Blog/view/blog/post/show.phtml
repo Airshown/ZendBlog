@@ -4,8 +4,8 @@
     <h1><?php echo $this->post->getName() ?></h1>
     <p>
         <small>
-            Category : <a href="<?php echo $this->url('posts/list', array('category' => $this->post->getCategory()->getSlug())) ?>"><?php echo $this->post->getCategory()->getName() ?></a>,
-            by <a href="<?php echo $this->url('posts/list', array('author' => $this->post->getUser()->getId())) ?>"><?php echo $this->post->getUser()->getUsername() ?></a> on <em><?php echo $this->post->getCreated()->format('F jS, H:i') ?></em>
+            Catégorie : <a href="<?php echo $this->url('posts/list', array('category' => $this->post->getCategory()->getSlug())) ?>"><?php echo $this->post->getCategory()->getName() ?></a>,
+            écrit par <a href="<?php echo $this->url('posts/list', array('author' => $this->post->getUser()->getId())) ?>"><?php echo $this->post->getUser()->getUsername() ?></a> le <em><?php echo $this->post->getCreated()->format('F jS, H:i') ?></em>
         </small>
     </p>
 </div>
@@ -18,7 +18,7 @@
 
 <section class="comments">
 
-    <h3>Comment this post</h3>
+    <h3>Commenter ce billet</h3>
 
     <?php $this->form->prepare() ?>
     <?php echo $this->form()->openTag($this->form); ?>
@@ -48,7 +48,7 @@
     <?php echo $this->formHidden($this->form->get('csrf_comment')) ?>
     <?php echo $this->form()->closeTag() ?>
 
-    <h3><?php echo count($this->post->getComments()) . ' ' . $this->translatePlural('Comment', 'Comments', count($this->post->getComments())) ?></h3>
+    <h3><?php echo count($this->post->getComments()) . ' ' . $this->translatePlural('Commentaire', 'Commentaires', count($this->post->getComments())) ?></h3>
 
     <?php foreach ($this->post->getComments() as $comment) : ?>
     <div class="row">

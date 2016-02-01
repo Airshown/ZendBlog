@@ -89,16 +89,16 @@ msgid "SELECT_AUTHOR"
 msgstr "Auteur"
 
 msgid "PLACEHOLDER_SLUG"
-msgstr ""
+msgstr "URL"
 
 msgid "INPUT_SLUG"
-msgstr ""
+msgstr "URL"
 
 msgid "PLACEHOLDER_POST"
 msgstr "Text de l’article"
 
 msgid "INPUT_POST"
-msgstr ""
+msgstr "Texte"
 
 msgid "NO_POST_FOUND"
 msgstr "Aucun billet trouvé"

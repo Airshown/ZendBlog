@@ -46,7 +46,7 @@ class AddPostForm extends Form
                 'name' => 'submit',
                 'attributes' => array(
                     'type' => 'submit',
-                    'value' => 'Add',
+                    'value' => 'Ajouter',
                     'class' => 'btn btn-primary'
                 )
             )

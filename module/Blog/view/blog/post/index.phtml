@@ -1,8 +1,8 @@
 <?php $this->headTitle('Blog') ?>
 
 <div class="page-header">
-    <h1>Blog</h1>
-    <p class="lead">Welcome on my blog</p>
+    <h1>ZenBlog</h1>
+    <p class="lead">Bienvenue sur le ZenBlog, un Blog tout en détente.</p>
 </div>
 
 <?php if (count($this->posts)) : ?>
@@ -11,13 +11,13 @@
         <h2><a href="<?php echo $this->url('posts/show', array('slug' => $post->getSlug())) ?>" title="<?php echo $post->getName() ?>"><?php echo $post->getName() ?></a></h2>
         <p>
             <small>
-                Category : <a href="<?php echo $this->url('posts/list', array('category' => $post->getCategory()->getSlug())) ?>"><?php echo $post->getCategory()->getName() ?></a>,
-                by <a href="<?php echo $this->url('posts/list', array('author' => $post->getUser()->getId())) ?>"><?php echo $post->getUser()->getUsername() ?></a> on <em><?php echo $post->getCreated()->format('F jS, H:i') ?></em>
+                Catégorie : <a href="<?php echo $this->url('posts/list', array('category' => $post->getCategory()->getSlug())) ?>"><?php echo $post->getCategory()->getName() ?></a>,
+                écrit par <a href="<?php echo $this->url('posts/list', array('author' => $post->getUser()->getId())) ?>"><?php echo $post->getUser()->getUsername() ?></a> le <em><?php echo $post->getCreated()->format('F jS, H:i') ?></em>
             </small>
         </p>
         <p><?php echo $this->truncate($this->markdown($post->getContent()), 450); ?></p>
         <p class="text-right">
-            <a href="<?php echo $this->url('posts/show', array('slug' => $post->getSlug())) ?>" class="btn btn-primary">Read more...</a>
+            <a href="<?php echo $this->url('posts/show', array('slug' => $post->getSlug())) ?>" class="btn btn-primary">Lire la suite...</a>
         </p>
     </article>
     <hr>
@@ -32,5 +32,5 @@
         );
     ?>
 <?php else : ?>
-    <h3>No posts</h3>
+    <h3>Il n'y a aucun billet pour le moment</h3>
 <?php endif; ?>
