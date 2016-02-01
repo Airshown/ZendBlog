@@ -6,14 +6,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo $this->url('home') ?>">Blog</a>
+            <a class="navbar-brand" href="<?php echo $this->url('home') ?>">Accueil</a>
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
             <ul class="nav navbar-nav">
-                <li><a href="<?php echo $this->url('home') ?>">< Back to front</a></li>
+                <li><a href="<?php echo $this->url('home') ?>">< Retourner sur le Blog</a></li>
                 <?php if ($this->identity()) : ?>
-                <li><a href="<?php echo $this->url('admin/logout') ?>">Logout</a></li>
+                <li><a href="<?php echo $this->url('admin/posts') ?>">Billets</a></li>
+                <li><a href="<?php echo $this->url('admin/logout') ?>">Déconnexion</a></li>
                 <?php endif; ?>
             </ul>
         </div>

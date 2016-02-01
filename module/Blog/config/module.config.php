@@ -30,7 +30,7 @@ return array(
     'doctrine' => include 'module.config.doctrine.php',
     // Translator
     'translator' => array(
-        'locale' => 'en_EN',
+        'locale' => 'fr_FR',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
