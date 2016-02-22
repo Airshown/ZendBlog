@@ -3,6 +3,10 @@
 namespace Blog\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as PaginatorAdapter;
+use Doctrine\ORM\Tools\Pagination\Paginator as DoctrinePaginator;
+use Zend\Paginator\Paginator;
+use DateTime;
 
 /**
  * CommentRepository

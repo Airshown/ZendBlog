@@ -14,6 +14,7 @@
                 <li><a href="<?php echo $this->url('home') ?>">< Retourner sur le Blog</a></li>
                 <?php if ($this->identity()) : ?>
                 <li><a href="<?php echo $this->url('admin/posts') ?>">Billets</a></li>
+                <li><a href="<?php echo $this->url('admin/comments') ?>">Commentaires</a></li>
                 <li><a href="<?php echo $this->url('admin/logout') ?>">Déconnexion</a></li>
                 <?php endif; ?>
             </ul>

@@ -95,7 +95,7 @@ msgid "INPUT_SLUG"
 msgstr "URL"
 
 msgid "PLACEHOLDER_POST"
-msgstr "Text de l’article"
+msgstr "Texte de l’article"
 
 msgid "INPUT_POST"
 msgstr "Texte"

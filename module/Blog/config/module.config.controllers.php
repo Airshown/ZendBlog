@@ -6,5 +6,6 @@ return array(
     'factories' => array(
         'Blog\Controller\Connexion' => 'Blog\Factory\ConnexionControllerFactory',
         'Blog\Controller\Post'      => 'Blog\Factory\PostControllerFactory',
+        'Blog\Controller\Comment'   => 'Blog\Factory\CommentControllerFactory',
     )
 );

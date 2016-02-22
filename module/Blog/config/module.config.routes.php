@@ -89,6 +89,64 @@ return array(
                         ),
                     ),
                 ),
+                'comments' => array(
+                    'type'    => 'Zend\Mvc\Router\Http\Literal',
+                    'options' => array(
+                        'route'    => '/comments',
+                        'defaults' => array(
+                            'controller'    => 'Blog\Controller\Comment',
+                            'action'        => 'indexAdmin',
+                        ),
+                    ),
+                    'may_terminate' => true,
+                    'child_routes' => array(
+                        'list' => array(
+                            'type'    => 'Zend\Mvc\Router\Http\Segment',
+                            'options' => array(
+                                'route'    => '[/page/:page]',
+                                'defaults' => array(
+                                    'page' => 1,
+                                ),
+                                'constraints' => array(
+                                    'page' => '[0-9]+',
+                                ),
+                            ),
+                        ),
+                        'delete' => array(
+                            'type'    => 'Zend\Mvc\Router\Http\Segment',
+                            'options' => array(
+                                'route'    => '/delete/:id',
+                                'defaults' => array(
+                                    'action' => 'delete',
+                                ),
+                                'constraints' => array(
+                                    'id' => '[0-9]+',
+                                ),
+                            ),
+                        ),
+                        'edit' => array(
+                            'type'    => 'Zend\Mvc\Router\Http\Segment',
+                            'options' => array(
+                                'route'    => '/edit/:id',
+                                'defaults' => array(
+                                    'action' => 'edit',
+                                ),
+                                'constraints' => array(
+                                    'id' => '[0-9]+',
+                                ),
+                            ),
+                        ),
+                        'add' => array(
+                            'type'    => 'Zend\Mvc\Router\Http\Literal',
+                            'options' => array(
+                                'route'    => '/add',
+                                'defaults' => array(
+                                    'action' => 'add',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
             ),
         ),
         'posts' => array(
