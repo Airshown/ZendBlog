@@ -3,11 +3,13 @@
 <?php $this->form->prepare() ?>
 <?php echo $this->form()->openTag($this->form); ?>
 
-    <h4 class="form-signin-heading">Connexion</h4>
+    <h4 class="form-signin-heading">Inscription</h4>
     <?php $userForm = $this->form->get('user'); ?>
+    <?php echo $this->formInput($userForm->get('name')) ?>
+    <?php echo $this->formInput($userForm->get('fname')) ?>
+    <?php echo $this->formInput($userForm->get('email')) ?>
     <?php echo $this->formInput($userForm->get('login')) ?>
     <?php echo $this->formPassword($userForm->get('password')) ?>
     <?php echo $this->formSubmit($this->form->get('submit')) ?>
 
-<?php echo $this->formHidden($this->form->get('csrf_connexion')) ?>
 <?php echo $this->form()->closeTag() ?>

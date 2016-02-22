@@ -11,10 +11,14 @@
 
         <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
             <ul class="nav navbar-nav">
+<<<<<<< HEAD
               <?php if ($this->identity()) : ?>
                 <li><a href="<?php echo $this->url('admin') ?>">Administration</a></li>
                 <li><a href="<?php echo $this->url('admin/logout') ?>">Déconnexion</a></li>
               <?php else: ?>
+=======
+                <li><a href="<?php echo $this->url('inscription') ?>">Inscription</a></li>
+>>>>>>> 419c30d878bd6937cbe142ce4853687c871f8d67
                 <li><a href="<?php echo $this->url('admin') ?>">Connexion</a></li>
               <?php endif; ?>
             </ul>

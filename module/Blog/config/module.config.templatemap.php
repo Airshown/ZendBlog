@@ -16,7 +16,7 @@ return array(
     'blog/post/add'         => __DIR__ . '/../view/blog/post/add.phtml',
     'blog/post/index-admin' => __DIR__ . '/../view/blog/post/index-admin.phtml',
     'blog/post/show'        => __DIR__ . '/../view/blog/post/show.phtml',
-    
+
     /* Commentaires */
     'blog/comment/index'       => __DIR__ . '/../view/blog/comment/index.phtml',
     'blog/comment/edit'        => __DIR__ . '/../view/blog/comment/edit.phtml',
@@ -26,6 +26,9 @@ return array(
 
     /* Connexion */
     'blog/connexion/index' => __DIR__ . '/../view/blog/connexion/index.phtml',
+
+    /* Inscription */
+    'blog/inscription/index' => __DIR__ . '/../view/blog/inscription/index.phtml',
 
     /* Erreur */
     'error/404'   => __DIR__ . '/../view/error/404.phtml',

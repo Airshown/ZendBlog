@@ -11,6 +11,28 @@ return array(
                 ),
             ),
         ),
+        'inscription' => array(
+            'type'    => 'Zend\Mvc\Router\Http\Literal',
+            'options' => array(
+                'route'    => '/inscription',
+                'defaults' => array(
+                    'controller' => 'Blog\Controller\Inscription',
+                    'action'     => 'index',
+                ),
+            ),
+            'may_terminate' => true,
+            'child_routes' => array(
+                'logout' => array(
+                    'type'    => 'Zend\Mvc\Router\Http\Literal',
+                    'options' => array(
+                        'route'    => '/logout',
+                        'defaults' => array(
+                            'action' => 'logout',
+                        ),
+                    ),
+                ),
+            ),
+        ),
         'admin' => array(
             'type'    => 'Zend\Mvc\Router\Http\Literal',
             'options' => array(
