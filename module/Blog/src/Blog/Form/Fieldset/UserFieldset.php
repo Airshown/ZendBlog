@@ -28,18 +28,54 @@ class UserFieldset extends Fieldset implements
             )
         );
 
+        // Name
+        $this->add(
+            array(
+                'name' => 'name',
+                'type' => 'Zend\Form\Element\Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'placeholder' => 'Last name',
+                    'required' => 'required',
+                ),
+            )
+        );
+
+        // First Name
+        $this->add(
+            array(
+                'name' => 'fname',
+                'type' => 'Zend\Form\Element\Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'placeholder' => 'First name',
+                    'required' => 'required',
+                ),
+            )
+        );
+
+        // Email
+        $this->add(
+            array(
+                'name' => 'email',
+                'type' => 'Zend\Form\Element\Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'placeholder' => 'Email',
+                    'required' => 'required',
+                ),
+            )
+        );
+
         // Login
         $this->add(
             array(
-                'name' => 'username',
+                'name' => 'login',
                 'type' => 'Zend\Form\Element\Text',
                 'attributes' => array(
                     'class'       => 'form-control',
                     'placeholder' => 'PLACEHOLDER_USERNAME',
                     'required'    => 'required',
-                ),
-                'options' => array(
-                    'label' => 'INPUT_USERNAME',
                 ),
             )
         );
@@ -53,9 +89,6 @@ class UserFieldset extends Fieldset implements
                     'class' => 'form-control',
                     'placeholder' => 'PLACEHOLDER_PASSWORD',
                     'required' => 'required',
-                ),
-                'options' => array(
-                    'label' => 'INPUT_PASSWORD',
                 ),
             )
         );
