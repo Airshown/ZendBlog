@@ -5,7 +5,7 @@
 
     <h4 class="form-signin-heading">Connexion</h4>
     <?php $userForm = $this->form->get('user'); ?>
-    <?php echo $this->formInput($userForm->get('login')) ?>
+    <?php echo $this->formInput($userForm->get('username')) ?>
     <?php echo $this->formPassword($userForm->get('password')) ?>
     <?php echo $this->formSubmit($this->form->get('submit')) ?>
 
