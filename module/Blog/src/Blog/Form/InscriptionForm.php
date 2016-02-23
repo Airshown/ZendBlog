@@ -26,7 +26,7 @@ class InscriptionForm extends Form
                     'name',
                     'fname',
                     'email',
-                    'login',
+                    'username',
                     'password',
                 )
             )

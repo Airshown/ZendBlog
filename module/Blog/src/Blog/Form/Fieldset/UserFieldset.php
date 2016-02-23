@@ -58,7 +58,7 @@ class UserFieldset extends Fieldset implements
         $this->add(
             array(
                 'name' => 'email',
-                'type' => 'Zend\Form\Element\Text',
+                'type' => 'Zend\Form\Element\Email',
                 'attributes' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Email',
@@ -70,7 +70,7 @@ class UserFieldset extends Fieldset implements
         // Login
         $this->add(
             array(
-                'name' => 'login',
+                'name' => 'username',
                 'type' => 'Zend\Form\Element\Text',
                 'attributes' => array(
                     'class'       => 'form-control',
@@ -101,7 +101,55 @@ class UserFieldset extends Fieldset implements
     public function getInputFilterSpecification()
     {
         return array(
-            'usermane' => array(
+            'name' => array(
+                'required' => true,
+                'filters' => array(
+                    array(
+                        'name' => 'StringTrim'
+                    )
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'StringLength',
+                        'options' => array(
+                            'min' => 2,
+                            'max' => 40,
+                        ),
+                    ),
+                ),
+            ),
+            'fname' => array(
+                'required' => true,
+                'filters' => array(
+                    array(
+                        'name' => 'StringTrim'
+                    )
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'StringLength',
+                        'options' => array(
+                            'min' => 2,
+                            'max' => 40,
+                        ),
+                    ),
+                ),
+            ),
+            'email' => array(
+                'required' => true,
+                'filters' => array(
+                    array(
+                        'name' => 'StringTrim'
+                    )
+                ),
+                'validators' => array(
+                    array(
+                        'name' => 'EmailAddress',
+                        'options' => array(),
+                    ),
+                ),
+            ),
+            'login' => array(
                 'required' => true,
                 'filters' => array(
                     array(
