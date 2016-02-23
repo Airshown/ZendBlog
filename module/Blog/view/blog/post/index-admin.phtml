@@ -21,7 +21,7 @@
             <td><?php echo $post->getCreated()->format('d/m/Y H:i') ?></td>
             <td>
                 <a href="<?php echo $this->url('admin/posts/edit', array('id' => $post->getId())) ?>" class="btn btn-primary">Modifier</a>
-                <a href="<?php echo $this->url('admin/posts/delete', array('id' => $post->getId())) ?>" class="btn btn-danger" onclick="return confirm('Are you sure ?')">Supprimer</a>
+                <a href="<?php echo $this->url('admin/posts/delete', array('id' => $post->getId())) ?>" class="btn btn-danger" onclick="return confirm('Êtes vous sûr ?')">Supprimer</a>
             </td>
         </tr>
         <?php endforeach; ?>

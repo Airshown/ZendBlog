@@ -26,6 +26,42 @@ class CommentService
         $this->em->flush($comment);
     }
 
+    public function getCommentBySlug($slug)
+    {
+        return $this->getRepository()->findOneBy(array(
+                'slug' => $slug,
+            ));
+    }
+
+    public function getCommentById($id)
+    {
+        return $this->getRepository()->findOneBy(array('id' => $id));
+    }
+
+    public function getLastComment()
+    {
+        return $this->getRepository()->findLastPost();
+    }
+
+    public function updateComment(Comment $comment)
+    {
+        if (!$post->getSlug()) {
+            $post->setSlug(str_replace(' ', '-', strtolower($comment->getName())));
+        }
+
+        $this->em->flush($comment);
+
+        $this->cacheService->generateCache($this);
+    }
+
+    public function deletePost(Comment $comment)
+    {
+        $this->em->remove($comment);
+        $this->em->flush($comment);
+
+        $this->cacheService->generateCache($this);
+    }
+
     /**
      * @return CommentRepository
      */

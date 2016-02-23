@@ -1,0 +1,24 @@
+<h1>Gestion des commentaires</h1>
+
+<p><a href="<?php echo $this->url('admin/comments/add') ?>" class="btn btn-primary">Ajouter un billet</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Catégorie</th>
+            <th>Date de publication</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+</table>
+
+<?php
+    echo $this->paginationControl(
+        $this->posts,
+        null,
+        'paginator/paginator',
+        array('route' => 'admin/comments/list')
+    );
+?>
