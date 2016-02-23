@@ -62,7 +62,6 @@ class InscriptionController extends CoreController
             $this->flashMessenger()->addErrorMessage($this->getTranslation('FORM_ERROR_LOGIN'));
             return $this->redirect()->toRoute('admin');
         }
-
         return new ViewModel(array(
             'form' => $this->inscriptionForm,
         ));

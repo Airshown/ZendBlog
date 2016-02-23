@@ -52,19 +52,18 @@ class DispatchListener extends AbstractListenerAggregate
     public function secureAdminRoute(MvcEvent $e)
     {
         $sm   = $e->getApplication()->getServiceManager();
-
-        if (0 === strpos($e->getRouteMatch()->getMatchedRouteName(), 'admin')) {
+        if (0 === strpos($e->getRouteMatch()->getMatchedRouteName(), 'admin') || 0 === strpos($e->getRouteMatch()->getMatchedRouteName(), 'inscription')) {
             /** @var Layout $layout */
             $layout = $sm->get('ControllerPluginManager')->get('Layout');
             $layout->setTemplate('admin/layout');
             /** @var Redirect $redirector */
             $redirector = $sm->get('ControllerPluginManager')->get('Redirect');
-
-            if ('admin' == $e->getRouteMatch()->getMatchedRouteName() && $this->authenticationService->hasIdentity()) {
+            $specialRoutes = array('admin', 'inscription');
+            if (in_array($e->getRouteMatch()->getMatchedRouteName(), $specialRoutes) && $this->authenticationService->hasIdentity()) {
                 $redirector->toRoute('admin/posts');
             }
 
-            if ('admin' != $e->getRouteMatch()->getMatchedRouteName() && !$this->authenticationService->hasIdentity()) {
+            if (!in_array($e->getRouteMatch()->getMatchedRouteName(), $specialRoutes) && !$this->authenticationService->hasIdentity()) {
                 $redirector->toRoute('admin');
             }
         }
